@@ -1,0 +1,32 @@
+<div class="header">
+    <img src="assets/images/home-icon.png" alt="home">
+    <span class="menubar">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        Menu
+    </span>
+    <span>
+        <ul class="mybreadcrumb">
+            <li>Client Maintenance</li>            
+            <li>{{subMenu}}</li>
+          </ul>
+    </span>
+    <span class="right-span">
+        <span class="reports">Reports</span>
+        <span class="help">
+            Help
+            <i class="fa fa-caret-down"></i>
+        </span>        
+    </span>
+</div>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+</nav>
+<div class="child-panel">
+    <router-outlet></router-outlet>
+</div>

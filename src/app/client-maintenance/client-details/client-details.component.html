@@ -1,0 +1,352 @@
+<div class="container-fluid class main-container">
+
+    <div class="label-header">Client Details</div>
+    <div class="navbar-wrapper">
+        <div class="navbar">
+            <a  href="#">Client Basic Details</a> |
+            <a href="#">Address Details</a> |
+            <a href="#">Contact Details</a> |
+            <a href="#">Bank Details</a> |
+            <a href="#">Assign Managers</a>
+        </div>
+    </div>
+    <h6 style="padding-top: 6px;">
+        Client Basic Details
+    </h6>
+    <hr>
+    <div class="container-fluid">
+        <form #clientBasicDetailsForm="ngForm" >
+            <div class="row">
+                <div class="col-2">
+                    <label>
+                        Client Name
+                    </label>
+                    <span class="mandatory-field">*</span>                    
+                    <input type="text" name="clientname" class="form-input"
+                     [(ngModel)]="clientName" required
+                     #clientname="ngModel"
+                    [ngClass]="{'invalid-textbox' :!clientname.valid }">
+                </div>      
+                <div class="col-2">
+                    <label>
+                        Short Name
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="shortname" class="form-input"
+                     [(ngModel)]="shortName" required
+                     #shortname="ngModel"
+                    [ngClass]="{'invalid-textbox' :!shortname.valid }">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Client Number
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="clientnumber" class="form-input"
+                     [(ngModel)]="clientNumber" required
+                     #clientnumber="ngModel"
+                    [ngClass]="{'invalid-textbox' :!clientnumber.valid }">   
+                </div>
+                <div class="col-2">
+                    <label>
+                        NAICS Code
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Client Name
+                    </label>
+                    <select name="currency">
+                        <option selected>US dollar (USD)</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Parent Client
+                    </label>
+                    <select name="parentclient">
+                        <option selected>ABL</option>
+                    </select>  
+                </div>
+                <div class="col-2">
+                    <label>
+                        Email
+                    </label>                                      
+                    <input type="text" name="email" class="form-input" value="info@abccompany.com">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Website
+                    </label>
+                    <div class="input-group website-input-group">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">https:// </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"> option </a>                        
+                          </div>
+                        </div>
+                        <input type="text" class="form-group-input" aria-label="Text input with dropdown button">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label>
+                        Description
+                    </label>                                      
+                    <textarea rows="4" class="text-area-input" id="description"></textarea>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Company Type
+                    </label>
+                    <select name="currency">
+                        <option selected>C Corporation</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Account Reference
+                    </label>                                      
+                    <input type="text" name="accountreference" class="form-input" value="abc36549">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2">
+                    <label>
+                        Credit Line
+                    </label>                                      
+                    <input type="text" name="creditline" class="form-input" value="23564897">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Min Balance
+                    </label>                                      
+                    <input type="text" name="email" class="form-input" value="12,300.00">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Origination Date
+                    </label>                                      
+                    <div class="form-group date-group">
+                        <div class='input-group date' id='datetimepicker1' data-target-input='nearest'>
+                          <input type='text' class="form-control datetimepicker-input" data-target="#datetimepicker1" name="params['start_time']" />
+                          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Risk Rating Code
+                    </label>                                      
+                    <input type="text" name="riskratingcode" class="form-input" value="">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Tax ID
+                    </label>                                      
+                    <input type="text" name="email" class="form-input" value="abc123645">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Expiration Date
+                    </label>                                      
+                    <div class="form-group date-group">
+                        <div class='input-group date' id='datetimepicker1' data-target-input='nearest'>
+                          <input type='text' class="form-control datetimepicker-input"  value="12/02/2018"/>
+                          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Term
+                    </label>                                      
+                    <input type="text" name="term" class="form-input" value="">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Branch
+                    </label>                                      
+                    <input type="text" name="branch" class="form-input" value="koramangala">
+                </div>
+                <div class="col-2">
+                    <label>
+                        Sales Region
+                    </label>
+                    <select name="salesregion">
+                        <option selected>Bangalore South</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Country
+                    </label>
+                    <select name="country">
+                        <option selected>INDIA</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label>
+                        State Province
+                    </label>
+                    <select name="currency">
+                        <option selected>Karnataka</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label>
+                        UCC Number
+                    </label>                                      
+                    <input type="text" name="uccnumber" class="form-input" value="02316548ABC">
+                </div>
+                <div class="col-2">
+                    <label>
+                        UCC Filling Date
+                    </label>                                      
+                    <div class="form-group date-group">
+                        <div class='input-group date' id='datetimepicker1' data-target-input='nearest'>
+                          <input type='text' class="form-control datetimepicker-input"  value="01/13/2018"/>
+                          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </form>        
+
+        <br>
+        <h6 style="padding-top: 6px;margin-left: -15px;">
+            Address Details
+        </h6>
+
+        <form #addressDetailsForm="ngForm" >
+            
+            <div class="row">
+                <div class="col-2">
+                    <label>
+                        Address Code
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Contact Name
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Alt. Contact Name
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Address Line 1
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Address Line 2
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        City
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        State Province
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Country
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Zip/Postal Code
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="naicscode" class="form-input"
+                     [(ngModel)]="naicsCode" required
+                     #naicscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                </div>
+                
+            </div>
+        </form>
+
+        <form #contactDetailsForm="ngForm" >
+
+        </form>
+
+        <form #bankDetailsForm="ngForm" >
+
+        </form>
+
+        <form #assignManagersForm="ngForm" >
+
+        </form>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</div>

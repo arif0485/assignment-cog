@@ -1,0 +1,23 @@
+.header-top .col {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: linear-gradient(to right, #ccffff 0%, #0066ff 100%);
+}
+
+.header-top .fa {
+    color: white;
+}
+
+.header-top .fa-bell {
+    margin-right: 28px;
+    font-size: 12px;
+}
+
+.header-top .fa-caret-down {
+    font-size:10px;
+    margin-left:3px;
+}
+
+.header-top img {
+    height: 30px;
+}

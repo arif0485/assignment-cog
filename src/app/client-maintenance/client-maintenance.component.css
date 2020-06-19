@@ -1,0 +1,51 @@
+.header{
+    padding: 5px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #e2dede;
+    border-top: 1px solid #e2dede;
+}
+
+.header img{
+    height: 20px;
+    position: relative;
+    top: -3px;
+}
+
+.header .menubar{
+    margin-left: 20px;
+    padding: 8px;
+    background: #efe9e9;
+}
+
+ul.mybreadcrumb {    
+    list-style: none;
+    margin: 0; 
+    display: inline; 
+    padding: 0;
+    margin-left: 15px;
+}
+ul.mybreadcrumb li {
+    display: inline;    
+}
+ul.mybreadcrumb li+li:before {
+    padding: 0px 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+.right-span{
+    float: right;
+}
+
+.right-span .reports{
+    margin-right: 15px;
+}
+
+.right-span .fa-caret-down{
+    color: rgb(187, 169, 169);
+}
+
+.child-panel {
+    padding: 12px;
+    background-color: #f3f1f1;
+}

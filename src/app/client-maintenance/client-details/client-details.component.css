@@ -1,0 +1,92 @@
+.main-container {
+    background-color: white;
+    font-size: 12px;
+}
+
+form {
+    border-bottom: 2px solid lightgray;
+}
+
+.label-header {
+    padding: 5px;
+}
+
+.navbar-wrapper{
+    background-color: #f3f1f1;    
+}
+
+.navbar-wrapper .navbar{
+    font-size: 11px;
+    width: 45%;
+}
+
+.navbar-wrapper .navbar a{
+    color: #3e57ec;
+}
+
+.form-input {
+    width: 90%;
+    border: 2px solid #aa9f9f;
+    border-radius: 5px;
+    padding: 3px;
+    display: block;
+}
+
+.mandatory-field{
+    color: red;
+}
+.col-2, .col-4{
+    padding: 0;
+}
+
+input[type=text].invalid-textbox,input[type=password].invalid-textbox{
+    border: 2px solid #ed5558;
+}
+
+select {
+    display: block;
+    height: 30px;
+    padding: 5px;
+    width: 90%;
+    border: 2px solid #aa9f9f;
+    border-radius: 5px;
+}
+
+.website-input-group button {
+    height: 28px;
+    padding: 2px;
+    /* background-color: #efeaea; */
+    font-size: 11px;
+    color: black;
+    border: 2px solid #aa9f9f;
+    border-right: 0;
+}
+
+.website-input-group input {
+    width: 65%;
+    border: 2px solid #aa9f9f;
+}
+
+.text-area-input {
+    display: block;
+    width: 95%;
+    padding: 5px;   
+}
+
+.date-group .datetimepicker-input{
+    padding: 2px;
+    height: 28px;
+    border-right: 0;
+}
+
+.date-group .input-group-text{
+    background: white;
+    height: 28px;
+    border-left: 0;
+}
+
+.date-group .input-group{
+    width: 90%;
+    border: 2px solid #aa9f9f;
+    border-radius: 5px;
+}
