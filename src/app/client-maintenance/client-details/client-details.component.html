@@ -3,8 +3,8 @@
     <div class="label-header">Client Details</div>
     <div class="navbar-wrapper">
         <div class="navbar">
-            <a  href="#">Client Basic Details</a> |
-            <a href="#">Address Details</a> |
+            <a  href="#clientBasicDetailsForm">Client Basic Details</a> |
+            <a href="#addressDetailsForm">Address Details</a> |
             <a href="#">Contact Details</a> |
             <a href="#">Bank Details</a> |
             <a href="#">Assign Managers</a>
@@ -15,7 +15,7 @@
     </h6>
     <hr>
     <div class="container-fluid">
-        <form #clientBasicDetailsForm="ngForm" >
+        <form #clientBasicDetailsForm="ngForm" id = "clientBasicDetailsForm">
             <div class="row">
                 <div class="col-2">
                     <label>
@@ -25,7 +25,7 @@
                     <input type="text" name="clientname" class="form-input"
                      [(ngModel)]="clientName" required
                      #clientname="ngModel"
-                    [ngClass]="{'invalid-textbox' :!clientname.valid }">
+                    [ngClass]="{'invalid-textbox' :saveClicked &&!clientname.valid }">
                 </div>      
                 <div class="col-2">
                     <label>
@@ -35,7 +35,7 @@
                     <input type="text" name="shortname" class="form-input"
                      [(ngModel)]="shortName" required
                      #shortname="ngModel"
-                    [ngClass]="{'invalid-textbox' :!shortname.valid }">
+                    [ngClass]="{'invalid-textbox' : saveClicked && !shortname.valid }">
                 </div>
                 <div class="col-2">
                     <label>
@@ -45,7 +45,7 @@
                     <input type="text" name="clientnumber" class="form-input"
                      [(ngModel)]="clientNumber" required
                      #clientnumber="ngModel"
-                    [ngClass]="{'invalid-textbox' :!clientnumber.valid }">   
+                    [ngClass]="{'invalid-textbox' : saveClicked && !clientnumber.valid }">   
                 </div>
                 <div class="col-2">
                     <label>
@@ -55,7 +55,7 @@
                     <input type="text" name="naicscode" class="form-input"
                      [(ngModel)]="naicsCode" required
                      #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    [ngClass]="{'invalid-textbox' : saveClicked && !naicscode.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
@@ -90,7 +90,7 @@
                             <a class="dropdown-item" href="#"> option </a>                        
                           </div>
                         </div>
-                        <input type="text" class="form-group-input" aria-label="Text input with dropdown button">
+                        <input type="text" class="form-group-input" aria-label="Text input with dropdown button" value="abccompany.com">
                     </div>
                 </div>
                 <div class="col-4">
@@ -126,7 +126,7 @@
                     <label>
                         Min Balance
                     </label>                                      
-                    <input type="text" name="email" class="form-input" value="12,300.00">
+                    <input type="text" name="minbalance" class="form-input" value="12,300.00">
                 </div>
                 <div class="col-2">
                     <label>
@@ -151,7 +151,7 @@
                     <label>
                         Tax ID
                     </label>                                      
-                    <input type="text" name="email" class="form-input" value="abc123645">
+                    <input type="text" name="taxid" class="form-input" value="abc123645">
                 </div>
                 <div class="col-2">
                     <label>
@@ -228,8 +228,8 @@
         <h6 style="padding-top: 6px;margin-left: -15px;">
             Address Details
         </h6>
-
-        <form #addressDetailsForm="ngForm" >
+        <hr>
+        <form #addressDetailsForm="ngForm" id = "addressDetailsForm">
             
             <div class="row">
                 <div class="col-2">
@@ -237,107 +237,400 @@
                         Address Code
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="addresscode" class="form-input"
+                     [(ngModel)]="addressCode" required
+                     #addresscode="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !addresscode.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
                         Contact Name
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="contactname" class="form-input"
+                     [(ngModel)]="contactName" required
+                     #contactname="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !contactname.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
                         Alt. Contact Name
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="altcontactname" class="form-input"
+                     [(ngModel)]="altContactName" required
+                     #altcontactname="ngModel"
+                    [ngClass]="{'invalid-textbox' : saveClicked && !altcontactname.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
                         Address Line 1
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="addressline1" class="form-input"
+                     [(ngModel)]="addressLine1" required
+                     #addressline1="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !addressline1.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
                         Address Line 2
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="addressline2" class="form-input"
+                     [(ngModel)]="addressLine2" required
+                     #addressline2="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !addressline2.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
                         City
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="mycity" class="form-input"
+                     [(ngModel)]="city" required
+                     #mycity="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !mycity.valid }"> 
                 </div>
                 <div class="col-2">
                     <label>
                         State Province
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <select name="stateprovince" [(ngModel)]="stateProvince" #stateprovince="ngModel"
+                     [ngClass]="{'invalid-textbox' : (saveClicked && !stateprovince.value) }" required>
+                        <option value="">Select</option>
+                        <option value="karnataka">karnataka</option>
+                    </select>
                 </div>
                 <div class="col-2">
                     <label>
                         Country
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <select name="mycountry" [(ngModel)]="country" #mycountry="ngModel"
+                     [ngClass]="{'invalid-textbox' : (saveClicked && !mycountry.value) }" required>
+                        <option value="">Select</option>
+                        <option value="INDIA">INDIA</option>
+                    </select>
                 </div>
+                
                 <div class="col-2">
                     <label>
                         Zip/Postal Code
                     </label>
                     <span class="mandatory-field">*</span>
-                    <input type="text" name="naicscode" class="form-input"
-                     [(ngModel)]="naicsCode" required
-                     #naicscode="ngModel"
-                    [ngClass]="{'invalid-textbox' :!naicscode.valid }"> 
+                    <input type="text" name="zipcode" class="form-input"
+                     [(ngModel)]="zipCode" required
+                     #zipcode="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !zipcode.valid }"> 
+                </div>
+                <div class="col-6"></div>
+
+                <div class="col-2">
+                    <label>
+                        Phone Type
+                    </label>                    
+                    <select name="phonetype" >
+                        <option value="">Select</option>
+                        <option selected value="Business">Business</option>
+                    </select>
+                </div>
+                
+                <div class="col-2">
+                    <label>
+                        Number
+                    </label>                    
+                    <input type="text" name="number" class="form-input" value="2032624561"> 
+                </div>
+                <div class="col-8 plus-icon">
+                    <p></p>
+                    <span><i class="fa fa-plus" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-2">                                    
+                    <select name="phonetype" >
+                        <option value="">Select</option>
+                        <option selected value="mobile">Mobile</option>
+                    </select>
+                </div>
+                
+                <div class="col-2">                                       
+                    <input type="text" name="number" class="form-input" value="6548332311"> 
+                </div>
+                <div class="col-8 minus-icon">                    
+                    <span><i class="fa fa-minus" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-2">
+                    <br>
+                    <button class="btn-primary text-light">Add Address</button>
+                    <br><br>
+                </div>
+
+                <div class="col-12 address-section">
+                    <div class="row">
+                        <div class="col-12 header-part">
+                            <span class="address-label">
+                                Primary Address
+                            </span>
+                            <span class="address-icons-group">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="col-12 content-part">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Address Code</td>
+                                        <td>3943094894</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact Name</td>
+                                        <td>Michael</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alt. Contact Name</td>
+                                        <td>Johnson</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address Line 1</td>
+                                        <td>#83 , 7th Cross</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address Line 2</td>
+                                        <td>3943094894</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address Code</td>
+                                        <td>4th B Block, kormangala</td>
+                                    </tr>
+                                    <tr>
+                                        <td>City</td>
+                                        <td>Bangalore</td>
+                                    </tr>
+                                    <tr>
+                                        <td>State Province</td>
+                                        <td>Karnataka</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country</td>
+                                        <td>INDIA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zip/Postal Code</td>
+                                        <td>560032</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Phone Number</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Business</td>
+                                        <td>2456120326</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile</td>
+                                        <td>3323165481</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
-        </form>
-
-        <form #contactDetailsForm="ngForm" >
 
         </form>
 
-        <form #bankDetailsForm="ngForm" >
-
+        <h6 style="padding-top: 6px;margin-left: -15px;">
+            Contact Details
+        </h6>
+        <hr>
+        <form #contactDetailsForm="ngForm" id = "contactDetailsForm">
+            <div class="row">
+                <div class="col-2">
+                    <label>
+                        Term
+                    </label>
+                    <select name="term">
+                        <option selected>Mr</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Name
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="text" name="myname" class="form-input"
+                     [(ngModel)]="name" required
+                     #myname="ngModel"
+                    [ngClass]="{'invalid-textbox' : saveClicked && !myname.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Email
+                    </label>
+                    <span class="mandatory-field">*</span>
+                    <input type="email" name="myemail" class="form-input"
+                     [(ngModel)]="email" required
+                     #myemail="ngModel"
+                    [ngClass]="{'invalid-textbox' :saveClicked && !myemail.valid }"> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Alt. Email
+                    </label>                    
+                    <input type="text" name="altemail" class="form-input"> 
+                </div>
+                <div class="col-4">
+                    <label>
+                        Notes
+                    </label>                    
+                    <textarea rows="3" name="notes" class="text-area-input"></textarea>
+                </div>
+                <div class="col-2">
+                    <label>
+                        Phone Type
+                    </label>                    
+                    <select name="phonetype" >
+                        <option value="">Select</option>                        
+                    </select>
+                </div>
+                
+                <div class="col-2">
+                    <label>
+                        Number
+                    </label>                    
+                    <input type="text" name="number" class="form-input" value=""> 
+                </div>
+                <div class="col-8 plus-icon">
+                    <p></p>
+                    <span><i class="fa fa-plus" aria-hidden="true"></i>
+                    </span>
+                </div>
+                
+                <div class="col-2">
+                    <br>
+                    <button class="btn-primary text-light">Add Contact</button>
+                    <br><br>
+                </div>
+            </div>
         </form>
 
-        <form #assignManagersForm="ngForm" >
-
+        <h6 style="padding-top: 6px;margin-left: -15px;">
+            Bank Details
+        </h6>
+        <hr>
+        <form #bankDetailsForm="ngForm" id = "bankDetailsForm">
+            <div class="row">
+                <div class="col-2">
+                    <label>
+                        Bank Name
+                    </label>                    
+                    <input type="text" name="bankname" class="form-input" value=""> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Bank Routing
+                    </label>                    
+                    <input type="text" name="bankrouting" class="form-input" value=""> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Bank Account
+                    </label>                    
+                    <input type="text" name="bankaccount" class="form-input" value=""> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Remit To Line 1
+                    </label>                    
+                    <input type="text" name="remittoline1" class="form-input" value=""> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Remit To Line 2
+                    </label>                    
+                    <input type="text" name="remittoline2" class="form-input" value=""> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Remit To Line 3
+                    </label>                    
+                    <input type="text" name="remittoline3" class="form-input" value=""> 
+                </div>
+                <div class="col-2">
+                    <label>
+                        Remit To Line 4
+                    </label>                    
+                    <input type="text" name="remittoline4" class="form-input" value=""> 
+                </div>
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <br>
+                    <button class="btn-primary text-light">Add Bank</button>
+                    <br><br>
+                </div>
+            </div>
         </form>
 
+        <h6 style="padding-top: 6px;margin-left: -15px;">
+            Assign Managers
+        </h6>
+        <hr>
+        <form #assignManagersForm="ngForm" id = "assignManagersForm">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="manager-search">
+                                <div class="manager-header">
+                                    <span>Search Managers</span>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                                <div class="manager-body">
+                                    <p>Manager Name 1</p>
+                                    <p>Manager Name 2</p>
+                                    <p>Manager Name 3</p>
+                                    <p>Manager Name 4</p>
+                                    <p>Manager Name 5</p>
+                                    <p>Manager Name 6</p>
+                                    <p>Manager Name 7</p>
+                                    <p>Manager Name 8</p>
+                                    <p>Manager Name 9</p>
+                                    <p>Manager Name 10</p>
+                                    <p>Manager Name 11</p>
+                                    <p>Manager Name 12</p>
+                                    <p>Manager Name 13</p>
+                                    <p>Manager Name 14</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="Selected-managers">
+                                <div>
+                                    <span>Selected Managers</span>                                    
+                                </div>
+                                <div class="manager-body">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+
+        <div style="text-align: right;">
+            <button class="cancelbtn">Cancel</button>
+            <button class="savebtn" (click)="onSave(clientBasicDetailsForm,addressDetailsForm,contactDetailsForm)">Save</button>
+        </div>
+        <br><br>
 
 
 
